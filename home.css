@@ -1,0 +1,132 @@
+body{
+    margin: auto;
+}
+header{
+    height: 60px;
+    background-color: #3b2632;
+}
+#icon{
+    float: left;
+    margin-left:2%;
+}
+#loginset{
+    float: right;
+    margin-right:2%;
+    margin-top:2%;
+}
+
+/*search*/
+#search{
+    height: 400px;
+    background-image: url('images/foodWallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 450px;
+}
+#logo{
+    height: 150px; ;
+    width: 150px; ;
+    background-color:white ;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 43%;
+}
+#logo>span{
+    font-size: 80px;
+    position: absolute;
+    margin-top: 17%;
+    margin-left: 27%;
+}
+#heading{
+    font-size: 60px;
+    position: absolute;
+    margin-top:13% ;
+    margin-left:27% ;
+    color: white;
+}
+.dropdown{
+    height: 60px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20%;
+    position: absolute;
+  
+}
+
+select{
+    height: 60px;
+    width: 40%;
+    font-size: 15px;
+    text-align: center;
+
+}
+#restDrop{
+    width: 59%; 
+}
+/*QuickSearch*/
+#quickSearch{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+#quickHeading{
+font-size: 30px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: purple;
+display: block;
+}
+#quickSubHeading{
+font-size: 20px;
+color: gray;
+line-height: 3;
+}
+.tileContainer{
+    height: 200px;
+    width: 30%;
+    display:inline-block ;
+    margin-left: 2%;
+    margin-top: 2%;
+    box-shadow: 10px 20px 5px gray;
+}
+.tileComponent1{
+    width: 50%;
+    float: left;
+}
+.tileComponent2{
+    width: 45%;
+    float: left;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+.tileComponent1 img{
+    width: 100%;
+    height: 100%;
+ }
+ .componentHeading{
+    color:purple;
+    font-size:25px ;
+ }
+ .componentSubHeading{
+    color:gray;
+    font-size: 20px;
+ }
+/*footer*/
+footer{
+    background-color: #3b2632;
+    color: white;
+    margin-top: 3%;
+}
+#footText{
+    text-align: center;
+    font-size: 30px;
+}
+.footDiv{
+    height: 70px;
+    width: 33%;
+    display: inline-block;
+    border-right: 2px solid #fff;
+}
+.noBorder{
+    border: none;
+}
