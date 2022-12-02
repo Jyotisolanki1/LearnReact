@@ -1,68 +1,31 @@
-import React from "react";
-import './QuickSearch';
+import React, { Component } from "react";
+import QuickDisplay from "./QuickDisplay";
 
-const QuickSearch = () => {
+const url = "https://zomatoajulypi.herokuapp.com/quicksearch"
+
+class QuickSearch extends Component{
+    constructor(){
+        super()
+        this.state={
+            mealType:''
+        }
+    }
+    render(){
     return(
         <div id="quickSearch">
-        <span id="quickHeading">Quick search</span>
-        <span id="quickSubHeading">Find Restaurant by Meal Type</span>
-        <div className="cardMain">
-            <div className="tileContainer">
-               <div className="tileComponent1">
-                  <img src="images/dinner1.jfif" alt="breakfast"/>
-               </div>
-               <div className="tileComponent2">
-                 <div className="componentHeading">breakfast</div>
-                 <div className="componentSubHeading">start your day with exclusive breakfast options</div>
-               </div>
-            </div>
-            <div className="tileContainer">
-                <div className="tileComponent1">
-                    <img src="images/dinner1.jfif" alt="breakfast"/>
-                 </div>
-                 <div className="tileComponent2">
-                   <div className="componentHeading">breakfast</div>
-                   <div className="componentSubHeading">start your day with exclusive breakfast options</div>
-                 </div>
-            </div>
-            <div className="tileContainer">
-                <div className="tileComponent1">
-                    <img src="images/dinner1.jfif" alt="breakfast"/>
-                 </div>
-                 <div className="tileComponent2">
-                   <div className="componentHeading">breakfast</div>
-                   <div className="componentSubHeading">start your day with exclusive breakfast options</div>
-                 </div>
-            </div>
-            <div className="tileContainer">
-                <div className="tileComponent1">
-                    <img src="images/dinner1.jfif" alt="breakfast"/>
-                 </div>
-                 <div className="tileComponent2">
-                   <div className="componentHeading">breakfast</div>
-                   <div className="componentSubHeading">start your day with exclusive breakfast options</div>
-                 </div>
-            </div>
-            <div className="tileContainer">
-                <div className="tileComponent1">
-                    <img src="images/dinner1.jfif" alt="breakfast"/>
-                 </div>
-                 <div className="tileComponent2">
-                   <div className="componentHeading">breakfast</div>
-                   <div className="componentSubHeading">start your day with exclusive breakfast options</div>
-                 </div>
-            </div>
-            <div className="tileContainer">
-                <div className="tileComponent1">
-                    <img src="images/dinner1.jfif" alt="breakfast"/>
-                 </div>
-                 <div className="tileComponent2">
-                   <div className="componentHeading">breakfast</div>
-                   <div className="componentSubHeading">start your day with exclusive breakfast options</div>
-                 </div>
-            </div>
-        </div>
-    </div>
+            <span id="quickHeading">Quick search</span>
+            <span id="quickSubHeading">Find Restaurant by Meal Type</span>
+            <QuickDisplay mealData={this.state.mealType}/>
+       </div>
     )
+    }
+    //api call on page load
+    componentDidMount(){
+        fetch(url,{method : 'GET'})
+        .then((res)=>res.json())
+        .then((data)=>{
+            this.setState({mealType:data})
+        })
+    }
 }
 export default QuickSearch;

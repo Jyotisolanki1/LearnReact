@@ -35,7 +35,7 @@ line-height: 3;
 }
 .tileComponent1 img{
     width: 100%;
-    height: 100%;
+    height: 200px;
  }
  .componentHeading{
     color:purple;
