@@ -3,6 +3,7 @@ import './Footer.css'
 
 const Footer = ()=> {
     return(
+        <div>
         <footer>
         <hr/><hr/>
         <p id="footText">&copy; Developer Funnel</p>
@@ -21,10 +22,11 @@ const Footer = ()=> {
             </div>
         </div>
         <hr/>
-        <div className="social">
-            
+        <div className="social">            
         </div>
     </footer>
+    </div>
+    
     )
 }
 

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import QuickDisplay from "./QuickDisplay";
 
-const url = "https://zomatoajulypi.herokuapp.com/quicksearch"
-
+const url = "https://zomatoapi.onrender.com/quicksearch"
 class QuickSearch extends Component{
     constructor(){
         super()

@@ -17,7 +17,7 @@ const QuickDisplay = (props) => {
                         <div className="componentSubHeading">start your day with exclusive breakfast options</div>
                         </div>
                     </div>
-                    </Link>
+                   </Link>
             )
         })
     }
