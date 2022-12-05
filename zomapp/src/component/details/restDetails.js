@@ -13,8 +13,16 @@ constructor(props){
     this.state={
         details:'',
         mealId:sessionStorage.getItem('mealId')?sessionStorage.getItem('mealId'):1,
-        menuList:''
+        menuList:'',
+        userItem:''
     }
+}
+addToCard=(data)=>{
+this.setState({userItem:data});
+}
+proceed = () =>{
+      sessionStorage.setItem('menu',this.state.userItem)
+      this.props.history.push(`/placeOrder/${this.state.details.restaurant_name}`)
 }
 render(){
     //let details = this.state.details
@@ -48,13 +56,11 @@ render(){
                 <Link to={`/listing/${this.state.mealId}`} className="btn btn-danger">
                     Back
                 </Link>&nbsp;
-                <Link to={`/listing/${this.state.mealId}`} className="btn btn-success">
-                    proceed
-                </Link>
+                <button className='btn btn-success'onClick={this.proceed}>Proceed</button>
             
             <div className='col-md-12'>
                 <h2><center>menu</center></h2>
-                <Menu menudata={this.state.menuList}/>
+                <Menu menudata={this.state.menuList} finalOrder={(data)=>{this.addToCard(data)}}/>
             </div>
            </div>
            </>

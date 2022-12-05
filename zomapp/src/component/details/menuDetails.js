@@ -2,13 +2,25 @@ import React,{Component} from "react";
 
 class menuDetails extends Component{
      orderId=[];
+     
      placeOrder= (id)=>{
        this.orderId.push(id);
+       this.props.finalOrder(this.orderId);
      }
      removeOrder=(id)=>{
        if(this.orderId.indexOf(id)>-1){
-            this.orderId.slice(this.orderId.indexOf(id),1)
+            this.orderId.splice(this.orderId.indexOf(id),1)
        }
+       this.props.finalOrder(this.orderId);
+     }
+     renderCard = (orders) =>{
+    if(orders){
+        return orders.map((item,index)=>{
+           return(
+            <b key={index}>{item}&nbsp;</b>
+           )
+        })
+    }
      }
     renderMenu = ({menudata}) => {
       if(menudata){
@@ -22,10 +34,10 @@ class menuDetails extends Component{
                         &nbsp; {item.menu_name} -Rs. {item.menu_price}
                       </div>
                       <div className="col-md-4">
-                          <button className="btn btn-success">
+                          <button className="btn btn-success" onClick={()=>{this.placeOrder(item.menu_id)}}>
                             <span className="glyphicon glyphicon-plus"></span>
                           </button>&nbsp;
-                          <button className="btn btn-danger">
+                          <button className="btn btn-danger" onClick={()=>{this.removeOrder(item.menu_id)}}>
                             <span className="glyphicon glyphicon-minus"></span>
                           </button>
                       </div>
@@ -40,7 +52,7 @@ class menuDetails extends Component{
      <div>
         <div className="col-md-12 bg-success">
             <h2>item Added</h2>
-            <p>item Number</p>
+            <p> Number{this.renderCard(this.orderId)}</p>
         </div>
         <div className="col-md-12 bg-info">
             {this.renderMenu(this.props)}
