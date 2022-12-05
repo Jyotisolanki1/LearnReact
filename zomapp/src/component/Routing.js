@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home/Home';
 import Listing from "./listing/listingApi";
-import Details from "../details/restDetails";
+import Details from "./details/restDetails";
 
 const Routing = () => {
 return(
