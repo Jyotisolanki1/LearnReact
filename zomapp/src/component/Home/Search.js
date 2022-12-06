@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import './Search.css';
+import { withRouter } from "react-router-dom";
 
 const lurl = "https://zomatoapi.onrender.com/location";
 const restUrl = "https://zomatoapi.onrender.com/restaurant?stateId=";
@@ -31,6 +32,9 @@ class Search extends Component{
             })
         }
     }
+    handleRest = (event) =>{
+    this.props.history.push(`/details?restId=${event.target.value}`)
+    }
     handleCity = (event) =>{
         let stateId = event.target.value
         fetch(`${restUrl}${stateId}`,{method:'GET'})
@@ -51,7 +55,7 @@ class Search extends Component{
                     <option>--SELECT YOUR CITY</option>
                     {this.renderCity(this.state.location)}
                 </select>
-                <select id="restDrop">
+                <select id="restDrop" onChange={this.handleRest}>
                     <option>--SELECT YOUR RESTAURANTS</option>
                     {this.renderRest(this.state.restData)}
                 </select>
@@ -74,4 +78,4 @@ componentDidMount(){
 }
 }
 
-export default Search;
+export default withRouter(Search);
